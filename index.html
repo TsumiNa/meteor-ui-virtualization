@@ -1,11 +1,14 @@
 <head>
   <title>Aurelia</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://cdn.rawgit.com/Marak/faker.js/master/build/build/faker.min.js"></script>
 </head>
 <body>
   <div aurelia-app="client/main"></div>
   <script>
-    System.import('aurelia-bootstrapper');
+    System.import('https://cdn.rawgit.com/Marak/faker.js/master/build/build/faker.min.js')
+        .then(function(m){
+            window.faker = m;
+            System.import('aurelia-bootstrapper');
+        });
   </script>
 </body>
